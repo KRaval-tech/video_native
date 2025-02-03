@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:video_native/show_sheet.dart';
 import 'native_video.dart';
 
 
@@ -13,10 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('Native Video Ad')),
-        body: NativeVideoAdWidget(),
-      ),
+      home: ShowSheet(),
     );
   }
 }

@@ -41,7 +41,8 @@ class _NativeVideoAdWidgetState extends State<NativeVideoAdWidget> {
   Widget build(BuildContext context) {
     return _isAdLoaded
         ? Container(
-      height: 500,
+      height: 250,
+      width: double.maxFinite,
       child: AdWidget(ad: _nativeAd!),
     )
         : Center(child: CircularProgressIndicator());

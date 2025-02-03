@@ -3,6 +3,7 @@ package com.example.video_native
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.gms.ads.nativead.MediaView
@@ -51,6 +52,14 @@ class ListTileNativeAdFactory(var context: Context) : GoogleMobileAdsPlugin.Nati
                 visibility = if (nativeAd.body?.isNotEmpty() == true) View.VISIBLE else View.INVISIBLE
             }
             this.bodyView = bodyView
+
+            // Add Install Button
+            val installButton = findViewById<Button>(R.id.native_ad_install_button)
+            with(installButton) {
+                text = nativeAd.callToAction
+                visibility = if (nativeAd.callToAction?.isNotEmpty() == true) View.VISIBLE else View.INVISIBLE
+            }
+            this.callToActionView = installButton
 
             setNativeAd(nativeAd)
         }
